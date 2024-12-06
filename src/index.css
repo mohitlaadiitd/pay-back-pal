@@ -2,16 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Custom styles for Ant Design button */
+.ant-btn:hover {
+  background-color: inherit !important; /* Keeps the background same as original */
+  border-color: inherit !important;    /* Keeps the border same */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ant-btn[disabled] {
+  background-color: inherit !important; /* Keeps the background same as original */
+  border-color: inherit !important;    /* Keeps the border same */
+  color: inherit !important;           /* Keeps the text color same as original */
 }
