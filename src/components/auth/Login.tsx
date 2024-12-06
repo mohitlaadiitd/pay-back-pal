@@ -1,8 +1,11 @@
 import { Input } from 'antd';
 import { CustomButton } from '../utils/Custom';
 import { useState } from 'react';
+import { useAuth } from '../../auth/AuthConfig';
 
 export default function Login() {
+    const auth = useAuth();
+
     const [input, setInput] = useState({
         email: '',
         password: ''
@@ -11,8 +14,12 @@ export default function Login() {
     const handleSubmit = () => {
         if (input.email && input.password) {
             console.log('Login submitted');
+            const req = {
+                email: input.email,
+                password: input.password
+            }
+            auth.loginAction(req);
         }
-
     };
 
     const handleEmailChange = (e: any) => {
