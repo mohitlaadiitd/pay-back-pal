@@ -13,3 +13,7 @@
   border-color: inherit !important;    /* Keeps the border same */
   color: inherit !important;           /* Keeps the text color same as original */
 }
+
+:where(.css-dev-only-do-not-override-1wwf28x).ant-divider-horizontal.ant-divider-with-text {
+  margin: 0 !important;
+}

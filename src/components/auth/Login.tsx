@@ -1,4 +1,4 @@
-import { Input } from 'antd';
+import { Input, Divider } from 'antd';
 import { CustomButton } from '../utils/Custom';
 import { useState } from 'react';
 import { useAuth } from '../../auth/AuthConfig';
@@ -44,11 +44,18 @@ export default function Login() {
                                 <p className=" text-base font-light">Enter your email and password</p>
                                 <div className='w-[100%] mt-4 flex flex-col gap-4'>
                                     <Input placeholder="pal@domain.com" type='email' onChange={handleEmailChange}
-                                        className='h-[40px] w-[100%] text-xl' value={input.email} />
+                                        className='h-[40px] w-[100%] text-xl rounded-lg' value={input.email} />
                                     <Input placeholder="********" type='password' onChange={handlePasswordChange}
-                                        className='h-[40px] w-[100%] text-xl' value={input.password} />
-                                    <CustomButton title="Log in" divStyling="bg-nav-base text-white" onClickFunction={handleSubmit} disable={!input.email || !input.password}
-                                        buttonStyling="h-[40px] w-[100%] hover:opacity-90 bg-nav-base hover:bg-nav-base" />
+                                        className='h-[40px] w-[100%] text-xl rounded-lg' value={input.password} />
+                                    <CustomButton title="Log in" divStyling="bg-nav-base  rounded-lg text-white" onClickFunction={handleSubmit} disable={!input.email || !input.password}
+                                        buttonStyling="h-[40px] w-[100%] hover:opacity-90 bg-nav-base hover:bg-nav-base  rounded-lg" />
+                                    <Divider className='mt-0 h-5 pt-[-50px]'>
+                                        <p className='text-[#828282]'>or continue with</p>
+                                    </Divider>
+                                    <CustomButton buttonStyling='position-absolute h-[40px] w-[100%] text-md bg-[#EEEEEE] rounded-lg text-black'
+                                        divStyling='bg-[#EEEEEE] text-black rounded-lg' title=''>
+                                        <img src="/images/auth/Google.svg" />
+                                    </CustomButton>
 
                                 </div>
                             </div>
@@ -56,7 +63,7 @@ export default function Login() {
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     );
 }
