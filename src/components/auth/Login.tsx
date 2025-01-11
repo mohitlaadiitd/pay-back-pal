@@ -40,7 +40,7 @@ export default function Login() {
                                 <h1 className="text-4xl font-semibold">Pay Back Pal 😡</h1>
                             </div>
                             <div className="text-center flex flex-col items-center justify-center gap-2 w-[400px]">
-                                <h2 className="text-2xl font-semibold">Login to your account</h2>
+                                <h2 className="text-2xl font-semibold">Login</h2>
                                 <p className=" text-base font-light">Enter your email and password</p>
                                 <div className='w-[100%] mt-4 flex flex-col gap-4'>
                                     <Input placeholder="pal@domain.com" type='email' onChange={handleEmailChange}
