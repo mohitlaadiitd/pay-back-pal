@@ -54,9 +54,9 @@ jobs:
 
             # Pull, stop old container, and run new Docker container
             docker pull $ECR_REGISTRY/$ECR_REPOSITORY:latest
-            docker stop $(docker ps -q) || true
-            docker rm $(docker ps -a -q) || true
-            docker run -d -p 3000:3000 $ECR_REGISTRY/$ECR_REPOSITORY:latest
+            docker ps -q | xargs -r docker stop
+            docker ps -a -q | xargs -r docker rm
+            docker run -d -p 3000:3000 $ECR_REGISTRY$ECR_REPOSITORY:latest
 
 
 
